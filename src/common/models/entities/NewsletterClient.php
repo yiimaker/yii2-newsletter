@@ -24,6 +24,8 @@ use yii\db\ActiveRecord;
  */
 class NewsletterClient extends ActiveRecord
 {
+    const SCENARIO_CONTACTS_EMAIL = 'contactsEmail';
+
     /**
      * @inheritdoc
      */
@@ -50,6 +52,7 @@ class NewsletterClient extends ActiveRecord
         return [
             ['contacts', 'required'],
             ['contacts', 'string', 'max' => 255],
+            ['contacts', 'email', 'on' => self::SCENARIO_CONTACTS_EMAIL],
 
             [['created_at', 'updated_at'], 'safe'],
         ];
@@ -65,6 +68,17 @@ class NewsletterClient extends ActiveRecord
             'contacts'      => Yii::t('newsletter/entity', 'Contacts'),
             'created_at'    => Yii::t('newsletter/entity', 'Created at'),
             'updated_at'    => Yii::t('newsletter/entity', 'Updated at'),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function transactions()
+    {
+        return [
+            self::SCENARIO_DEFAULT => self::OP_ALL,
+            self::SCENARIO_CONTACTS_EMAIL => self::OP_ALL,
         ];
     }
 }
