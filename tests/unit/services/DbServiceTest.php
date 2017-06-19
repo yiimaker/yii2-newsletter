@@ -44,7 +44,7 @@ class DbServiceTest extends TestCase
     {
         $data = [
             'NewsletterClient' => [
-                'contacts' => 'test'
+                'contacts' => 'test@example.com'
             ],
         ];
 
@@ -52,7 +52,12 @@ class DbServiceTest extends TestCase
 
         $this->assertTrue($res);
         $this->tester->seeRecord(NewsletterClient::class, [
-            'contacts' => 'test'
+            'contacts' => 'test@example.com'
         ]);
+    }
+
+    public function testDefaultMode()
+    {
+        $this->assertEquals(DbService::MODE_EMAIL, $this->_service->mode);
     }
 }

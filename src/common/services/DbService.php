@@ -7,6 +7,7 @@
 
 namespace ymaker\newsletter\common\services;
 
+use yii\base\InvalidConfigException;
 use yii\base\Object;
 use yii\db\Connection;
 use yii\di\Instance;
@@ -20,10 +21,17 @@ use ymaker\newsletter\common\models\entities\NewsletterClient;
  */
 class DbService extends Object implements ServiceInterface
 {
+    const MODE_GENERIC = 1;
+    const MODE_EMAIL = 2;
+
     /**
      * @var string|Connection
      */
     public $db = 'db';
+    /**
+     * @var int
+     */
+    public $mode = self::MODE_EMAIL;
 
 
     /**
@@ -31,6 +39,9 @@ class DbService extends Object implements ServiceInterface
      */
     public function init()
     {
+        if ($this->mode !== self::MODE_GENERIC && $this->mode !== self::MODE_EMAIL) {
+            throw new InvalidConfigException('Invalid mode!');
+        }
         $this->db = Instance::ensure($this->db, Connection::class);
     }
 
@@ -77,6 +88,15 @@ class DbService extends Object implements ServiceInterface
     protected function initModel(&$model, array $data)
     {
         if ($model->load($data)) {
+            switch ($this->mode) {
+                case self::MODE_GENERIC:
+                    $model->setScenario(NewsletterClient::SCENARIO_DEFAULT);
+                    break;
+                case self::MODE_EMAIL:
+                    $model->setScenario(NewsletterClient::SCENARIO_CONTACTS_EMAIL);
+                    break;
+            }
+
             if (!$model->validate()) {
                 return $model->getErrors();
             }

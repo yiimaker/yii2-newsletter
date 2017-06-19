@@ -31,7 +31,7 @@ class FakeRequest extends Request
     public function post($name = null, $defaultValue = null)
     {
         return [
-            'NewsletterClient' => ['contacts' => 'action test'],
+            'NewsletterClient' => ['contacts' => 'test@action.com'],
         ];
     }
 }

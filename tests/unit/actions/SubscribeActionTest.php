@@ -28,7 +28,7 @@ class SubscribeActionTest extends TestCase
         (new SubscribeAction(null, null))->run();
 
         $this->tester->seeRecord(NewsletterClient::class, [
-            'contacts' => 'action test',
+            'contacts' => 'test@action.com',
         ]);
     }
 }
