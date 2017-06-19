@@ -2,7 +2,6 @@
 return [
     'db' => require (__DIR__ . '/db.php'),
 
-    'templateManager' => [
-        'class' => \ymaker\email\templates\components\TemplateManager::class,
-    ],
+    'request' => \ymaker\newsletter\tests\mock\FakeRequest::class,
+    'response' => \yii\web\Response::class,
 ];
