@@ -7,8 +7,10 @@
 
 namespace ymaker\newsletter\common\services;
 
+use Yii;
 use yii\base\InvalidConfigException;
 use yii\base\Object;
+use yii\data\ActiveDataProvider;
 use yii\db\Connection;
 use yii\di\Instance;
 use ymaker\newsletter\common\models\entities\NewsletterClient;
@@ -51,6 +53,19 @@ class DbService extends Object implements ServiceInterface
     public function getModel()
     {
         return new NewsletterClient();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getDataProvider()
+    {
+        $query = NewsletterClient::find()->orderBy(['created_at' => SORT_ASC]);
+
+        return new ActiveDataProvider([
+            'query' => $query,
+            'db' => $this->db,
+        ]);
     }
 
     /**

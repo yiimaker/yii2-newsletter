@@ -23,6 +23,13 @@ interface ServiceInterface
     public function getModel();
 
     /**
+     * Returns data provider
+     *
+     * @return \yii\data\BaseDataProvider
+     */
+    public function getDataProvider();
+
+    /**
      * Creates newsletter client
      *
      * @param array $data Array with client contacts
