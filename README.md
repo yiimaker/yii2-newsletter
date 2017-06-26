@@ -12,11 +12,11 @@ Installation
 #### Install package
 Run command
 ```
-composer require yiimaker/newsletter
+composer require yiimaker/yii2-newsletter
 ```
 or add
 ```json
-"yiimaker/newsletter": "dev-master"
+"yiimaker/yii2-newsletter": "dev-master"
 ```
 to the require section of your composer.json.
 
