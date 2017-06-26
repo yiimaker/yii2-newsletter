@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "07aa358198a62d7ba0551ae4efe24943",
-    "content-hash": "402765add9773fe4964246763a001f63",
+    "hash": "665a16a91cb3a91794ac830917d6a7ad",
+    "content-hash": "868ba8a49a09fa90b384ae3a4b4b0a7d",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -202,49 +202,6 @@
                 "html"
             ],
             "time": "2017-06-03 02:28:16"
-        },
-        {
-            "name": "yii2deman/yii2deman-language-provider",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/yii2deman/yii2deman-language-provider.git",
-                "reference": "6b8638ebe0766f997f8514f245bb8b57efb06b99"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/yii2deman/yii2deman-language-provider/zipball/6b8638ebe0766f997f8514f245bb8b57efb06b99",
-                "reference": "6b8638ebe0766f997f8514f245bb8b57efb06b99",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2": "~2.0.0"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "yii2deman\\tools\\i18n\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Vladimir Kuprienko",
-                    "email": "vldmr.kuprienko@gmail.com",
-                    "role": "developer"
-                }
-            ],
-            "description": "Language provider for modules",
-            "keywords": [
-                "i18n",
-                "language",
-                "provider",
-                "yii2"
-            ],
-            "time": "2017-06-06 12:21:42"
         },
         {
             "name": "yiisoft/yii2",
@@ -782,16 +739,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.2.3",
+            "version": "6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006"
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8d6c6cc55186db87b7dc5009827429ba4e9dc006",
-                "reference": "8d6c6cc55186db87b7dc5009827429ba4e9dc006",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
                 "shasum": ""
             },
             "require": {
@@ -801,8 +758,11 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0",
+                "phpunit/phpunit": "^4.0 || ^5.0",
                 "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
@@ -840,7 +800,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-02-28 22:50:30"
+            "time": "2017-06-22 18:50:49"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1964,16 +1924,16 @@
         },
         {
             "name": "sebastian/environment",
-            "version": "3.0.3",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/environment.git",
-                "reference": "02b6b2c7aefe2cdb1185b8dbf8718b0bcedf3ab3"
+                "reference": "74776f8dbc081cab9287c2a601c0c1d842568744"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/02b6b2c7aefe2cdb1185b8dbf8718b0bcedf3ab3",
-                "reference": "02b6b2c7aefe2cdb1185b8dbf8718b0bcedf3ab3",
+                "url": "https://api.github.com/repos/sebastianbergmann/environment/zipball/74776f8dbc081cab9287c2a601c0c1d842568744",
+                "reference": "74776f8dbc081cab9287c2a601c0c1d842568744",
                 "shasum": ""
             },
             "require": {
@@ -2010,7 +1970,7 @@
                 "environment",
                 "hhvm"
             ],
-            "time": "2017-05-18 10:10:00"
+            "time": "2017-06-20 16:25:05"
         },
         {
             "name": "sebastian/exporter",
@@ -3064,9 +3024,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "yii2deman/yii2deman-language-provider": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
