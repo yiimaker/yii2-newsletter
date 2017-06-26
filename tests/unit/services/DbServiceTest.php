@@ -7,6 +7,8 @@
 
 namespace ymaker\newsletter\tests\unit\services;
 
+use yii\base\Event;
+use ymaker\newsletter\common\events\SubscribeEvent;
 use ymaker\newsletter\common\models\entities\NewsletterClient;
 use ymaker\newsletter\common\services\DbService;
 use ymaker\newsletter\common\services\ServiceInterface;
@@ -54,6 +56,25 @@ class DbServiceTest extends TestCase
         $this->tester->seeRecord(NewsletterClient::class, [
             'contacts' => 'test@example.com'
         ]);
+    }
+
+    public function testTriggerEvent()
+    {
+        $contacts = 'test@example.com';
+        Event::on(
+            DbService::class,
+            SubscribeEvent::EVENT_AFTER_SUBSCRIBE,
+            function (SubscribeEvent $event) use ($contacts) {
+                $this->assertEquals($contacts, $event->contacts);
+            }
+        );
+
+        $data = [
+            'NewsletterClient' => [
+                'contacts' => $contacts
+            ],
+        ];
+        $this->_service->create($data);
     }
 
     public function testDefaultMode()

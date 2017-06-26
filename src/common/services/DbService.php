@@ -8,11 +8,12 @@
 namespace ymaker\newsletter\common\services;
 
 use Yii;
+use yii\base\Component;
 use yii\base\InvalidConfigException;
-use yii\base\Object;
 use yii\data\ActiveDataProvider;
 use yii\db\Connection;
 use yii\di\Instance;
+use ymaker\newsletter\common\events\SubscribeEvent;
 use ymaker\newsletter\common\models\entities\NewsletterClient;
 
 /**
@@ -21,7 +22,7 @@ use ymaker\newsletter\common\models\entities\NewsletterClient;
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
  */
-class DbService extends Object implements ServiceInterface
+class DbService extends Component implements ServiceInterface
 {
     const MODE_GENERIC = 1;
     const MODE_EMAIL = 2;
@@ -79,14 +80,18 @@ class DbService extends Object implements ServiceInterface
         if (is_array($initResult)) {
             return $initResult;
         } elseif ($initResult) {
-            $transaction = $this->db->beginTransaction();
             try {
                 if ($model->insert(false)) {
-                    $transaction->commit();
+                    $this->trigger(
+                        SubscribeEvent::EVENT_AFTER_SUBSCRIBE,
+                        Yii::createObject([
+                            'class' => SubscribeEvent::class,
+                            'contacts' => $model->contacts,
+                        ])
+                    );
                     return true;
                 }
             } catch (\Exception $ex) {
-                $transaction->rollBack();
                 throw $ex;
             }
         }
