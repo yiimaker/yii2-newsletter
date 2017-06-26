@@ -28,6 +28,7 @@ to the require section of your composer.json.
 Usage
 -----
 * [(EN)](docs/en/basic-usage.md) [(RU)](docs/ru/basic-usage.md) Basic usage
+* [(EN)](docs/en/advanced-usage.md) [(RU)](docs/ru/advanced-usage.md) Advanced usage
 
 License
 -------
