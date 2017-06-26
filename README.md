@@ -1,6 +1,6 @@
 Newsletter module
 =================
-TODO: description
+Module for saving user contacts to database from newsletter form.
 
 [![Build Status](https://travis-ci.org/yiimaker/yii2-newsletter.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-newsletter)
 [![Total Downloads](https://poser.pugx.org/yiimaker/yii2-newsletter/downloads)](https://packagist.org/packages/yiimaker/yii2-newsletter)
@@ -27,7 +27,7 @@ to the require section of your composer.json.
 
 Usage
 -----
-TODO: usage guide
+* [(EN)](docs/en/basic-usage.md) [(RU)](docs/ru/basic-usage.md) Basic usage
 
 License
 -------
