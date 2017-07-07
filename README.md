@@ -16,7 +16,7 @@ composer require yiimaker/yii2-newsletter
 ```
 or add
 ```json
-"yiimaker/yii2-newsletter": "dev-master"
+"yiimaker/yii2-newsletter": "1.0.0"
 ```
 to the require section of your composer.json.
 
