@@ -9,7 +9,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /**
- * View file for NewsletterForm widget
+ * View file for NewsletterForm widget.
  *
  * @var \yii\web\View $this
  * @var \ymaker\newsletter\common\models\entities\NewsletterClient $model

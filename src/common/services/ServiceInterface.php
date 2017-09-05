@@ -8,7 +8,7 @@
 namespace ymaker\newsletter\common\services;
 
 /**
- * Interface for services
+ * Base interface for services.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -16,21 +16,21 @@ namespace ymaker\newsletter\common\services;
 interface ServiceInterface
 {
     /**
-     * Returns model object
+     * Returns model object.
      *
      * @return mixed
      */
     public function getModel();
 
     /**
-     * Returns data provider
+     * Returns data provider.
      *
      * @return \yii\data\BaseDataProvider
      */
     public function getDataProvider();
 
     /**
-     * Creates newsletter client
+     * Creates newsletter client.
      *
      * @param array $data Array with client contacts
      * @return bool

@@ -12,7 +12,7 @@ use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 
 /**
- * This is the model class for table "{{%newsletter_client}}"
+ * This is the model class for table "{{%newsletter_client}}".
  *
  * @property int $id
  * @property string $contacts

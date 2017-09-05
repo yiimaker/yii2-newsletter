@@ -11,7 +11,7 @@ use yii\web\Controller;
 use ymaker\newsletter\common\services\ServiceInterface;
 
 /**
- * Default controller for backend newsletter module
+ * Default controller for backend newsletter module.
  * 
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

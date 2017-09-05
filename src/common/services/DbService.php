@@ -17,7 +17,7 @@ use ymaker\newsletter\common\events\SubscribeEvent;
 use ymaker\newsletter\common\models\entities\NewsletterClient;
 
 /**
- * Service for newsletter model
+ * Database service.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -43,7 +43,7 @@ class DbService extends Component implements ServiceInterface
     public function init()
     {
         if ($this->mode !== self::MODE_GENERIC && $this->mode !== self::MODE_EMAIL) {
-            throw new InvalidConfigException('Invalid mode!');
+            throw new InvalidConfigException('Invalid mode config!');
         }
         $this->db = Instance::ensure($this->db, Connection::class);
     }
@@ -99,7 +99,7 @@ class DbService extends Component implements ServiceInterface
     }
 
     /**
-     * Process post data
+     * Process post data.
      *
      * @param NewsletterClient $model
      * @param array $data

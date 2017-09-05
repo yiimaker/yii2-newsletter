@@ -12,7 +12,7 @@ use yii\web\Controller;
 use ymaker\newsletter\frontend\actions\SubscribeAction;
 
 /**
- * Default controller for frontend newsletter module
+ * Default controller for frontend newsletter module.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

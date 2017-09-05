@@ -10,7 +10,7 @@ namespace ymaker\newsletter\common\events;
 use yii\base\Event;
 
 /**
- * Subscribe event
+ * Subscribe event.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

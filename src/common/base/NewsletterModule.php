@@ -12,7 +12,7 @@ use ymaker\newsletter\common\services\DbService;
 use ymaker\newsletter\common\services\ServiceInterface;
 
 /**
- * Base newsletter module
+ * Base newsletter module.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -20,9 +20,9 @@ use ymaker\newsletter\common\services\ServiceInterface;
 class NewsletterModule extends \yii\base\Module
 {
     /**
-     * Configuration of service
+     * Configuration of service.
      *
-     * @var ServiceInterface
+     * @var array
      */
     public $service = null;
 

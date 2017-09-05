@@ -14,7 +14,7 @@ use yii\web\Response;
 use ymaker\newsletter\common\services\ServiceInterface;
 
 /**
- * Action for subscribe on newsletter
+ * Action for subscribe on newsletter.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -22,7 +22,7 @@ use ymaker\newsletter\common\services\ServiceInterface;
 class SubscribeAction extends Action
 {
     /**
-     * Running action
+     * Running action.
      *
      * @return \yii\web\Response|string
      * @throws NotFoundHttpException

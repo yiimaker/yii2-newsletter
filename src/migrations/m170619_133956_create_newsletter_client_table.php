@@ -8,7 +8,7 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `newsletter_client`
+ * Handles the creation of table `newsletter_client`.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
@@ -16,7 +16,7 @@ use yii\db\Migration;
 class m170619_133956_create_newsletter_client_table extends Migration
 {
     /**
-     * @var string Table name
+     * @var string Migration tabel name.
      */
     public $tableName = '{{%newsletter_client}}';
 

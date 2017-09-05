@@ -10,7 +10,7 @@ namespace ymaker\newsletter\frontend;
 use ymaker\newsletter\common\base\NewsletterModule;
 
 /**
- * Frontend newsletter module definition class
+ * Newsletter frontend module definition class.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0

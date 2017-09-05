@@ -3,6 +3,8 @@ use yii\grid\GridView;
 use yii\grid\SerialColumn;
 
 /**
+ * View file for default controller in backend newsletter module.
+ *
  * @var \yii\web\View $this
  * @var \yii\data\ActiveDataProvider $dataProvider
  * 

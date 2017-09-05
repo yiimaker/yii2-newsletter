@@ -11,7 +11,7 @@ use yii\base\Widget;
 use ymaker\newsletter\common\models\entities\NewsletterClient;
 
 /**
- * Renders newsletter form
+ * Renders newsletter form.
  *
  * @author Vladimir Kuprienko <vldmr.kuprienko@gmail.com>
  * @since 1.0
