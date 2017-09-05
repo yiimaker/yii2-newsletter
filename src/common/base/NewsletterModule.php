@@ -24,8 +24,18 @@ class NewsletterModule extends \yii\base\Module
      *
      * @var array
      */
-    public $service = null;
+    private $_service = null;
 
+
+    /**
+     * Setter for service
+     *
+     * @param array $service
+     */
+    public function setService(array $service)
+    {
+        $this->_service = $service;
+    }
 
     /**
      * @inheritdoc
@@ -34,12 +44,10 @@ class NewsletterModule extends \yii\base\Module
     {
         parent::init();
 
-        if ($this->service === null) {
-            $this->service = [
-                'class' => DbService::class,
-            ];
+        if ($this->_service === null) {
+            $this->_service = ['class' => DbService::class];
         }
 
-        Yii::$container->set(ServiceInterface::class, $this->service);
+        Yii::$container->set(ServiceInterface::class, $this->_service);
     }
 }

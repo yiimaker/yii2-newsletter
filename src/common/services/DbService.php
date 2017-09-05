@@ -34,15 +34,25 @@ class DbService extends Component implements ServiceInterface
     /**
      * @var int
      */
-    public $mode = self::MODE_EMAIL;
+    private $_mode = self::MODE_EMAIL;
 
+
+    /**
+     * Setter for mode.
+     *
+     * @param int $mode
+     */
+    public function setMode($mode)
+    {
+        $this->_mode = $mode;
+    }
 
     /**
      * @inheritdoc
      */
     public function init()
     {
-        if ($this->mode !== self::MODE_GENERIC && $this->mode !== self::MODE_EMAIL) {
+        if ($this->_mode !== self::MODE_GENERIC && $this->_mode !== self::MODE_EMAIL) {
             throw new InvalidConfigException('Invalid mode config!');
         }
         $this->db = Instance::ensure($this->db, Connection::class);
@@ -108,7 +118,7 @@ class DbService extends Component implements ServiceInterface
     protected function initModel(&$model, array $data)
     {
         if ($model->load($data)) {
-            switch ($this->mode) {
+            switch ($this->_mode) {
                 case self::MODE_GENERIC:
                     $model->setScenario(NewsletterClient::SCENARIO_DEFAULT);
                     break;

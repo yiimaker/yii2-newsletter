@@ -76,9 +76,4 @@ class DbServiceTest extends TestCase
         ];
         $this->_service->create($data);
     }
-
-    public function testDefaultMode()
-    {
-        $this->assertEquals(DbService::MODE_EMAIL, $this->_service->mode);
-    }
 }

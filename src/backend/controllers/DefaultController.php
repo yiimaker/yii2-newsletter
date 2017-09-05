@@ -45,7 +45,8 @@ class DefaultController extends Controller
      */
     public function actionList()
     {
-        $dataProvider = $this->_service->getDataProvider();
-        return $this->render('list', compact('dataProvider'));
+        return $this->render('list', [
+            'dataProvider' => $this->_service->getDataProvider(),
+        ]);
     }
 }
