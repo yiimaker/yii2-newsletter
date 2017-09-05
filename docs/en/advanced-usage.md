@@ -1,7 +1,8 @@
 Advanced usage
 ==============
 
-###### 1) Services
+Services
+--------
 This is configuration property of frontend and backend modules
 uses for work with data layer in controller.
 
@@ -17,11 +18,13 @@ basic interface.
 * Generic it's mode has only string validator.
 * E-mail has string and email validators.
 
-###### 2) Events
+Events
+------
 Default database service has `after subscribe` event. If data will be successfully saved in database - 
 event object will be contain data from newsletter form in `contacts` property.
 You can use it in your code `ymaker\newsletter\common\events\SubscribeEvent`.
 
-###### 3) Subscribe action
+Subscribe action
+----------------
 You can use `ymaker\newsletter\frontend\actions\SubscribeAction` in your controllers instead
 default frontend module.

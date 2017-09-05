@@ -16,7 +16,7 @@ composer require yiimaker/yii2-newsletter
 ```
 or add
 ```json
-"yiimaker/yii2-newsletter": "~1.0.0"
+"yiimaker/yii2-newsletter": "~1.0"
 ```
 to the require section of your composer.json.
 
@@ -27,13 +27,15 @@ to the require section of your composer.json.
 
 Usage
 -----
-* [(EN)](docs/en/basic-usage.md) [(RU)](docs/ru/basic-usage.md) Basic usage
-* [(EN)](docs/en/advanced-usage.md) [(RU)](docs/ru/advanced-usage.md) Advanced usage
+* [(EN) Basic usage](docs/en/basic-usage.md)
+* [(RU) Базовое использование](docs/ru/basic-usage.md)
+* [(EN) Advanced usage](docs/en/advanced-usage.md)
+* [(RU)Продвинутое использование](docs/ru/advanced-usage.md) 
 
 License
 -------
 [![License](https://poser.pugx.org/yiimaker/yii2-newsletter/license)](https://packagist.org/packages/yiimaker/yii2-newsletter)
 
-This project is released under the terms of the BSD-3-Clause [license](LICENSE)
+This project is released under the terms of the BSD-3-Clause [license](LICENSE).
 
 Copyright (c) 2017, Yii Maker
