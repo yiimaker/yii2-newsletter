@@ -1,5 +1,11 @@
-Newsletter module
-=================
+<p align="center">
+    <a href="https://github.com/yiimaker" target="_blank">
+        <img src="https://avatars1.githubusercontent.com/u/24204902" height="100px">
+    </a>
+    <h1 align="center">Newsletter module</h1>
+    <br>
+</p>
+
 Module for saving user contacts to database from newsletter form.
 
 [![Build Status](https://travis-ci.org/yiimaker/yii2-newsletter.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-newsletter)
