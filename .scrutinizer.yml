@@ -23,7 +23,7 @@ checks:
         parameters_in_camelcaps: true
         parameter_doc_comments: true
         param_doc_comment_if_not_inferrable: true
-        properties_in_camelcaps: true
+        properties_in_camelcaps: false
         no_long_variable_names:
             maximum: '20'
         no_goto: true
