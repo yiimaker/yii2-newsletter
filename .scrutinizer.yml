@@ -1,13 +1,6 @@
 filter:
     excluded_paths:
-        - environments/*
-        - common/tests/*
-        - console/migrations/*
-        - backend/components/gii/*
-        - backend/tests/*
-        - backend/web/*
-        - frontend/web/*
-        - frontend/tests/*
+        - tests/*
 checks:
     php:
         code_rating: true
