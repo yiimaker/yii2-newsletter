@@ -35,6 +35,14 @@ class DbService extends Component implements ServiceInterface
      * @var int
      */
     private $_mode = self::MODE_EMAIL;
+    /**
+     * @var array
+     */
+    private $_errors = [];
+    /**
+     * @var NewsletterClient
+     */
+    private $_model;
 
 
     /**
@@ -45,6 +53,14 @@ class DbService extends Component implements ServiceInterface
     public function setMode($mode)
     {
         $this->_mode = $mode;
+    }
+
+    /**
+     * @return array
+     */
+    public function getErrors()
+    {
+        return $this->_errors;
     }
 
     /**
@@ -71,10 +87,8 @@ class DbService extends Component implements ServiceInterface
      */
     public function getDataProvider()
     {
-        $query = NewsletterClient::find()->orderBy(['created_at' => SORT_ASC]);
-
         return new ActiveDataProvider([
-            'query' => $query,
+            'query' => NewsletterClient::find()->orderBy(['created_at' => SORT_ASC]),
             'db' => $this->db,
         ]);
     }
@@ -84,21 +98,15 @@ class DbService extends Component implements ServiceInterface
      */
     public function create(array $data)
     {
-        $model = $this->getModel();
-        $initResult = $this->initModel($model, $data);
-
-        if (is_array($initResult)) {
-            return $initResult;
-        } elseif ($initResult) {
+        $this->_model = $this->getModel();
+        $this->defineMode();
+        if ($this->checkModel($data)) {
             try {
-                if ($model->insert(false)) {
-                    $this->trigger(
-                        SubscribeEvent::EVENT_AFTER_SUBSCRIBE,
-                        Yii::createObject([
-                            'class' => SubscribeEvent::class,
-                            'contacts' => $model->contacts,
-                        ])
-                    );
+                if ($this->_model->insert(false)) {
+                    $this->trigger(SubscribeEvent::EVENT_AFTER_SUBSCRIBE, Yii::createObject([
+                        'class' => SubscribeEvent::class,
+                        'contacts' => $this->_model->contacts,
+                    ]));
                     return true;
                 }
             } catch (\Exception $ex) {
@@ -109,28 +117,33 @@ class DbService extends Component implements ServiceInterface
     }
 
     /**
+     * Define mode for model.
+     */
+    protected function defineMode()
+    {
+        switch ($this->_mode) {
+            case self::MODE_GENERIC:
+                $this->_model->setScenario(NewsletterClient::SCENARIO_DEFAULT);
+                break;
+            case self::MODE_EMAIL:
+                $this->_model->setScenario(NewsletterClient::SCENARIO_CONTACTS_EMAIL);
+                break;
+        }
+    }
+
+    /**
      * Process post data.
      *
-     * @param NewsletterClient $model
      * @param array $data
-     * @return array|bool
+     * @return bool
      */
-    protected function initModel(&$model, array $data)
+    protected function checkModel(array $data)
     {
-        if ($model->load($data)) {
-            switch ($this->_mode) {
-                case self::MODE_GENERIC:
-                    $model->setScenario(NewsletterClient::SCENARIO_DEFAULT);
-                    break;
-                case self::MODE_EMAIL:
-                    $model->setScenario(NewsletterClient::SCENARIO_CONTACTS_EMAIL);
-                    break;
+        if ($this->_model->load($data)) {
+            if ($this->_model->validate()) {
+                return true;
             }
-
-            if (!$model->validate()) {
-                return $model->getErrors();
-            }
-            return true;
+            $this->_errors = $this->_model->getErrors();
         }
         return false;
     }

@@ -36,4 +36,11 @@ interface ServiceInterface
      * @return bool
      */
     public function create(array $data);
+
+    /**
+     * Should returns array with errors.
+     *
+     * @return array
+     */
+    public function getErrors();
 }

@@ -24,7 +24,7 @@ class SubscribeAction extends Action
     /**
      * Running action.
      *
-     * @return \yii\web\Response|string
+     * @return \yii\web\Response|array
      * @throws NotFoundHttpException
      */
     public function run()
@@ -33,12 +33,11 @@ class SubscribeAction extends Action
         if ($request->getIsPost()) {
             /* @var ServiceInterface $service */
             $service = Yii::createObject(ServiceInterface::class);
-            $result = $service->create($request->post());
-
             $response = Yii::$app->getResponse();
-            if ($request->getIsAjax()) {
+
+            if (!$service->create($request->post()) && $request->getIsAjax()) {
                 $response->format = Response::FORMAT_JSON;
-                return $result;
+                return $service->getErrors();
             }
 
             return $response->redirect($request->getReferrer());
