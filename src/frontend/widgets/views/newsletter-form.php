@@ -19,15 +19,18 @@ use yii\widgets\ActiveForm;
  */
 
 \yii\bootstrap\BootstrapAsset::register($this);
-?>
-<?php $form = ActiveForm::begin([
+
+$form = ActiveForm::begin([
     'action' => ['/newsletter/default/subscribe'],
     'options' => ['class' => 'form-inline'],
-]) ?>
-<?= $form->field($model, 'contacts')
+]);
+
+echo $form->field($model, 'contacts')
     ->textInput(['placeholder' => $model->getAttributeLabel('contacts')])
-    ->label(false) ?>
-<?= Html::submitButton(Yii::t('front/newsletter', 'Subscribe'), [
+    ->label(false);
+
+echo Html::submitButton(Yii::t('front/newsletter', 'Subscribe'), [
     'class' => 'btn btn-success',
-]) ?>
-<?php ActiveForm::end() ?>
+]);
+
+ActiveForm::end();
