@@ -10,6 +10,7 @@ Module for saving user contacts to database from newsletter form.
 
 [![Build Status](https://travis-ci.org/yiimaker/yii2-newsletter.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-newsletter)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiimaker/yii2-newsletter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiimaker/yii2-newsletter/?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/59c3c083368b08320ffe7036/badge.svg?style=flat-square)](https://www.versioneye.com/user/projects/59c3c083368b08320ffe7036)
 [![Total Downloads](https://poser.pugx.org/yiimaker/yii2-newsletter/downloads)](https://packagist.org/packages/yiimaker/yii2-newsletter)
 [![Latest Stable Version](https://poser.pugx.org/yiimaker/yii2-newsletter/v/stable)](https://packagist.org/packages/yiimaker/yii2-newsletter)
 [![Latest Unstable Version](https://poser.pugx.org/yiimaker/yii2-newsletter/v/unstable)](https://packagist.org/packages/yiimaker/yii2-newsletter)
