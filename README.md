@@ -6,7 +6,7 @@
     <br>
 </p>
 
-Module for saving user contacts to database from newsletter form.
+Module for saving user contacts from newsletter form to database.
 
 [![Build Status](https://travis-ci.org/yiimaker/yii2-newsletter.svg?branch=master)](https://travis-ci.org/yiimaker/yii2-newsletter)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/yiimaker/yii2-newsletter/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/yiimaker/yii2-newsletter/?branch=master)

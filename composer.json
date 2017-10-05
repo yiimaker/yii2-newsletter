@@ -1,6 +1,6 @@
 {
   "name": "yiimaker/yii2-newsletter",
-  "description": "Module for saving user contacts to database from newsletter form",
+  "description": "Module for saving user contacts from newsletter form to database",
   "keywords": ["yii2", "module", "newsletter", "subscribe"],
   "type": "yii2-extension",
   "license": "BSD-3-Clause",
