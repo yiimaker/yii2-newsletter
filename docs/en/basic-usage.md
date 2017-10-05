@@ -3,7 +3,7 @@ Basic usage
 
 Frontend
 --------
-Functionality for subscribe
+Functionality to subscribe
 
 1. Configure module in frontend part of your application
     ```php
@@ -21,7 +21,7 @@ Functionality for subscribe
 
 Backend
 -------
-Functionality for manage of users contacts
+Functionality for managing users contacts
 
 1. Configure module in backend part of your application
     ```php
@@ -30,4 +30,4 @@ Functionality for manage of users contacts
         'newsletter' => \ymaker\newsletter\backend\Module::class,
     ],
     ```
-2. And followed by this route: `http://your-app.back.dev/newsletter/default/list`
+2. And follow this route: `http://your-app.back.dev/newsletter/default/list`
